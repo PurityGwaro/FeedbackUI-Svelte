@@ -1,7 +1,9 @@
 <script>
   import Button from "./Button.svelte";
   import Card from "./Card.svelte";
+  import RatingSelect from "./RatingSelect.svelte";
   let text = ''
+  let rating = 10
   let btnDisabled = true
   let min = 10
   let message
@@ -22,7 +24,7 @@
         <h2>How would you rate your service with us?</h2>
     </header>
     <form>
-        <!-- rating select -->
+        <RatingSelect/>
         <div class="input-group">
             <input type="text" on:input={handleInput} bind:value = {text} placeholder="Tell us something that keeps you coming back">
             <Button disabled={btnDisabled} type="submit">Send</Button>
