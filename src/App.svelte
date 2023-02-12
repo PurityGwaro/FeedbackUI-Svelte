@@ -24,7 +24,8 @@
 	$: average =  feedback.reduce((a,{rating})=>a + rating,0) /feedback.length
 
 	const addFeedback = (e) =>{
-		console.log(e.detail);
+		const newFeedback = e.detail
+		feedback = [newFeedback, ...feedback]
 	}
 
 	const deleteFeedback=(e)=>{
