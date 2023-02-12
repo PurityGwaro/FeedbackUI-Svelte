@@ -1,15 +1,14 @@
 <script>
-    import {createEventDispatcher} from 'svelte'
+    import {FeedbackStore} from '../stores'
     import Card from "./Card.svelte";
     export let item
 
-    const dispatch = createEventDispatcher()
-    // dispatch will take in two arguments, name and detail
 
     const handleDelete = (itemId) =>{
-        dispatch("delete-feedback", itemId)
+        FeedbackStore.update((currentFeedback)=>{
+            return currentFeedback.filter(item => item.id != itemId)
+        })
     }
-    // we are going to dispatch a custom event in order to send the item id to where the item data is,.. the App file
 
 </script>
 
